@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smith-utils"
+version = "0.1.0"
+description = "A utility library for data cleaning and parsing."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+
+authors = [
+  { name = "Eiichi YAMAMOTO", email = "info@yeiichi.com" }
+]
+
+keywords = [
+  "csv",
+  "deduplication",
+  "data-filtering",
+  "file-organization",
+  "filtering",
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Utilities",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+docs = [
+  "sphinx>=8,<9",
+  "furo>=2024.8.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/yeiichi/smith-utils"
+Repository = "https://github.com/yeiichi/smith-utils"
+
+[tool.setuptools.packages.find]
+where = ["src"]
