@@ -39,9 +39,7 @@ pip install smith-utils
 ## Quick Start
 
 ```python
-from smith_utils.datetime.date_utils import ensure_date
-from smith_utils.numeric.refinement import parse_numeric_value
-from smith_utils.text.normalization import normalize_text
+from smith_utils import ensure_date, parse_numeric_value, normalize_text
 
 # Datetime
 date = ensure_date("20231225") # datetime.date(2023, 12, 25)

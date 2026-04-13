@@ -1,7 +1,5 @@
 Datetime Utilities
 ==================
 
-.. automodule:: smith_utils.datetime.date_utils
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. automodule:: smith_utils.datetime
+   :members: format_ordinal, parse_strict_date, ensure_date

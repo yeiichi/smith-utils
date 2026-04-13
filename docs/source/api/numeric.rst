@@ -1,7 +1,5 @@
 Numeric Refinement
 ==================
 
-.. automodule:: smith_utils.numeric.refinement
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. automodule:: smith_utils.numeric
+   :members: parse_numeric_value, parse_currency_value
