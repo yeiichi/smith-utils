@@ -30,6 +30,7 @@ coverage.xml
 *.cover
 *.sved
 .pytest_cache/
+.ruff_cache/
 
 # Environments
 .env
@@ -53,3 +54,6 @@ legacy/
 # Documentation
 docs/_build/
 docs/source/generated/
+
+# Misc
+scripts/
