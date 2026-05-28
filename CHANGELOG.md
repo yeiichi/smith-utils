@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v0.2.1 (2026-05-28)
+
+### Bug Fixes
+
+- Trigger patch release for URL correction
+  ([`07ae073`](https://github.com/yeiichi/smith-utils/commit/07ae073eb2edf1d029faf7b491f95098fe390309))
+
+### Documentation
+
+- Correct URLs for Documentation and Changelog in TOML
+  ([`860d3a0`](https://github.com/yeiichi/smith-utils/commit/860d3a07e3539180279cc0e7f78012a0d18ec3e0))
+
+
 ## v0.2.0 (2026-05-28)
 
 ### Chores
