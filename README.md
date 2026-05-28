@@ -27,6 +27,7 @@ Clean and parse messy numeric data.
 Standardize text and compare string similarity.
 - `normalize_text`: Unicode NFKC normalization, case folding, and whitespace handling.
 - `StringDistance`: Implementation of Damerau-Levenshtein and Jaro-Winkler algorithms for fuzzy matching.
+- `make_unicode_char_name_records`: Extract Unicode codepoint/name metadata from text.
 
 ## Installation
 
@@ -40,6 +41,7 @@ pip install smith-utils
 
 ```python
 from smith_utils import ensure_date, parse_numeric_value, normalize_text
+from smith_utils import make_unicode_char_name_records
 
 # Datetime
 date = ensure_date("20231225") # datetime.date(2023, 12, 25)
@@ -49,6 +51,10 @@ value = parse_numeric_value("(1,250.50)") # -1250.5
 
 # Text
 clean_text = normalize_text("  Ｓｍｉｔｈ  Ｕｔｉｌｓ  ") # "smith utils"
+
+# Unicode metadata
+records = make_unicode_char_name_records("Aあ")
+# [UnicodeCharNameRecord(index=0, codepoint='U+0041', ...), ...]
 ```
 
 ## Directory Structure

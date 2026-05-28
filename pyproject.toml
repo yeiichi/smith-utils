@@ -38,6 +38,9 @@ docs = [
   "sphinx>=8,<9",
   "furo>=2024.8.6",
 ]
+release = [
+  "python-semantic-release>=9,<10",
+]
 
 [project.urls]
 Homepage = "https://github.com/yeiichi/smith-utils"
@@ -47,3 +50,8 @@ Changelog = "https://urlcheck-smith.readthedocs.io/en/latest/changelog.html"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.semantic_release]
+allow_zero_version = true
+tag_format = "v{version}"
+version_toml = ["pyproject.toml:project.version"]

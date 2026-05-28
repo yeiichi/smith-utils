@@ -46,6 +46,8 @@ Text Normalization & Metrics
 
 .. autofunction:: normalize_text
    :no-index:
+.. autofunction:: make_unicode_char_name_records
+   :no-index:
 
 .. autoclass:: StringDistance
    :no-index:
@@ -60,3 +62,10 @@ Text Normalization & Metrics
 
    # Normalize text.
    clean_text = normalize_text("  Ｓｍｉｔｈ  Ｕｔｉｌｓ  ")  # "smith utils"
+
+.. code-block:: python
+
+   from smith_utils import make_unicode_char_name_records
+
+   # Extract codepoint and Unicode name metadata.
+   records = make_unicode_char_name_records("Aあ")

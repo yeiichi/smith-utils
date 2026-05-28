@@ -1,5 +1,4 @@
 # docs/source/conf.py
-import os
 import sys
 from pathlib import Path
 

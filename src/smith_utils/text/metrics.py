@@ -192,11 +192,14 @@ class StringDistance:
 
         p = 0.1
         max_l = 4
-        l = 0
-        while l < min(len1, len2, max_l) and s1[l] == s2[l]:
-            l += 1
+        prefix_len = 0
+        while (
+            prefix_len < min(len1, len2, max_l)
+            and s1[prefix_len] == s2[prefix_len]
+        ):
+            prefix_len += 1
 
-        return jaro + (l * p * (1.0 - jaro))
+        return jaro + (prefix_len * p * (1.0 - jaro))
 
 
 def analyze_pair(a: str, b: str, ignore_case: bool = False) -> Result:
