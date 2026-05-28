@@ -45,8 +45,8 @@ release = [
 [project.urls]
 Homepage = "https://github.com/yeiichi/smith-utils"
 Repository = "https://github.com/yeiichi/smith-utils"
-Documentation = "https://urlcheck-smith.readthedocs.io/"
-Changelog = "https://urlcheck-smith.readthedocs.io/en/latest/changelog.html"
+Documentation = "https://smith-utils.readthedocs.io/"
+Changelog = "https://smith-utils.readthedocs.io/en/latest/changelog.html"
 
 [tool.setuptools.packages.find]
 where = ["src"]
