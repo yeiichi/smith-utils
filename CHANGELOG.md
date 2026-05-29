@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.3.0 (2026-05-29)
+
+### Features
+
+- Expose text utilities at package root
+  ([`93ee497`](https://github.com/yeiichi/smith-utils/commit/93ee4970a0e5f30b17fc5c235e07c11a9affd7c9))
+
+
 ## v0.2.1 (2026-05-28)
 
 ### Bug Fixes
