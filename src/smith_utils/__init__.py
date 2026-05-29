@@ -1,20 +1,30 @@
 from .datetime import ensure_date, format_ordinal, parse_strict_date
 from .numeric import parse_currency_value, parse_numeric_value
 from .text import (
+    NewlineType,
+    Relation,
+    Result,
     StringDistance,
     UnicodeCharNameRecord,
     analyze_pair,
     make_unicode_char_name_records,
+    normalize_file_to_lf,
+    normalize_newlines_stream,
     normalize_text,
 )
 
 __all__ = [
+    "NewlineType",
+    "Relation",
+    "Result",
     "StringDistance",
     "UnicodeCharNameRecord",
     "analyze_pair",
     "ensure_date",
     "format_ordinal",
     "make_unicode_char_name_records",
+    "normalize_file_to_lf",
+    "normalize_newlines_stream",
     "normalize_text",
     "parse_currency_value",
     "parse_numeric_value",

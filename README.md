@@ -27,7 +27,11 @@ Clean and parse messy numeric data.
 Standardize text and compare string similarity.
 - `normalize_text`: Unicode NFKC normalization, case folding, and whitespace handling.
 - `StringDistance`: Implementation of Damerau-Levenshtein and Jaro-Winkler algorithms for fuzzy matching.
+- `analyze_pair`: Convenience function for string comparison returning a `Result`.
+- `Relation` / `Result`: Relation enum and typed result for text comparisons.
 - `make_unicode_char_name_records`: Extract Unicode codepoint/name metadata from text.
+- `normalize_newlines_stream`: Stream-based newline normalization to LF with newline type detection.
+- `normalize_file_to_lf`: File-based newline normalization helper.
 
 ## Installation
 
@@ -42,6 +46,7 @@ pip install smith-utils
 ```python
 from smith_utils import ensure_date, parse_numeric_value, normalize_text
 from smith_utils import make_unicode_char_name_records
+from smith_utils import normalize_file_to_lf
 
 # Datetime
 date = ensure_date("20231225") # datetime.date(2023, 12, 25)
@@ -55,6 +60,10 @@ clean_text = normalize_text("  Ｓｍｉｔｈ  Ｕｔｉｌｓ  ") # "smith uti
 # Unicode metadata
 records = make_unicode_char_name_records("Aあ")
 # [UnicodeCharNameRecord(index=0, codepoint='U+0041', ...), ...]
+
+# Normalize a file's newlines to LF
+summary = normalize_file_to_lf("input.txt", "output.txt")
+# {'newline_type': 'CRLF', 'bytes_in': ..., 'bytes_out': ...}
 ```
 
 ## Directory Structure

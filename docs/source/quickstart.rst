@@ -48,12 +48,21 @@ Text Normalization & Metrics
    :no-index:
 .. autofunction:: make_unicode_char_name_records
    :no-index:
+.. autofunction:: normalize_file_to_lf
+   :no-index:
+.. autofunction:: normalize_newlines_stream
+   :no-index:
 
 .. autoclass:: StringDistance
    :no-index:
    :members:
 
 .. autofunction:: analyze_pair
+   :no-index:
+.. autoclass:: Result
+   :no-index:
+   :members:
+.. autoclass:: Relation
    :no-index:
 
 .. code-block:: python
@@ -69,3 +78,10 @@ Text Normalization & Metrics
 
    # Extract codepoint and Unicode name metadata.
    records = make_unicode_char_name_records("Aあ")
+
+.. code-block:: python
+
+   from smith_utils import normalize_file_to_lf
+
+   # Normalize newlines to LF and report original newline style.
+   summary = normalize_file_to_lf("input.txt", "output.txt")
