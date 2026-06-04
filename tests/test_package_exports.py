@@ -1,8 +1,10 @@
 from src import smith_utils
 
 
-def test_text_exports_are_available_globally():
+def test_exports_are_available_globally():
     expected = {
+        "get_file_digest",
+        "get_text_digest",
         "NewlineType",
         "normalize_file_to_lf",
         "normalize_newlines_stream",
