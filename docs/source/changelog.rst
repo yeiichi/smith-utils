@@ -1,6 +1,29 @@
 Changelog
 =========
 
+v0.3.1
+------
+
+- Added Crypto Hash Utilities (``get_text_digest``, ``get_file_digest``).
+- Exposed hash helpers from ``smith_utils.crypto`` and top-level ``smith_utils``.
+- Switched the package build backend from Setuptools to Hatchling.
+
+v0.3.0
+------
+
+- Exposed text utilities at the package root.
+
+v0.2.1
+------
+
+- Corrected project documentation and changelog URLs.
+
+v0.2.0
+------
+
+- Added Unicode name metadata and newline normalization utilities.
+- Configured semantic-release.
+
 v0.1.0
 ------
 

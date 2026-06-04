@@ -9,3 +9,4 @@ This section contains the API documentation for ``smith-utils``.
    datetime
    numeric
    text
+   crypto

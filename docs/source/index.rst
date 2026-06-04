@@ -12,6 +12,7 @@ Key Features
 - **Datetime Utilities**: Robust date parsing and formatting.
 - **Numeric Refinement**: Clean and parse messy numeric data.
 - **Text Normalization & Metrics**: Standardize text and compare string similarity.
+- **Crypto Hash Utilities**: Calculate SHA-256 digests for text and files.
 
 Getting started
 ---------------

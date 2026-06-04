@@ -12,18 +12,18 @@ This package consolidates distributed utility functions to improve code reuse an
 
 ## Key Features
 
-### 📅 Datetime Utilities (`smith_utils.datetime`)
+### Datetime Utilities (`smith_utils.datetime`)
 Robust date parsing and formatting.
 - `ensure_date`: Flexible conversion of strings, `datetime.date` objects, or `None` (returns today) into a `date` object.
 - `parse_strict_date`: Strict parsing for `YYYYMMDD` or `YYYY-MM-DD` formats, rejecting ambiguous inputs.
 - `format_ordinal`: Converts integers to ordinal strings (e.g., `1` → `"1st"`, `22` → `"22nd"`).
 
-### 🔢 Numeric Refinement (`smith_utils.numeric`)
+### Numeric Refinement (`smith_utils.numeric`)
 Clean and parse messy numeric data.
 - `parse_numeric_value`: Handles custom separators, decimals, and negative formats like `(1,234.56)`.
 - `parse_currency_value`: Alias for numeric parsing, specifically for currency strings.
 
-### 📝 Text Normalization & Metrics (`smith_utils.text`)
+### Text Normalization & Metrics (`smith_utils.text`)
 Standardize text and compare string similarity.
 - `normalize_text`: Unicode NFKC normalization, case folding, and whitespace handling.
 - `StringDistance`: Implementation of Damerau-Levenshtein and Jaro-Winkler algorithms for fuzzy matching.
@@ -32,6 +32,11 @@ Standardize text and compare string similarity.
 - `make_unicode_char_name_records`: Extract Unicode codepoint/name metadata from text.
 - `normalize_newlines_stream`: Stream-based newline normalization to LF with newline type detection.
 - `normalize_file_to_lf`: File-based newline normalization helper.
+
+### Crypto Hash Utilities (`smith_utils.crypto`)
+Calculate SHA-256 digests for text and files.
+- `get_text_digest`: Returns the SHA-256 hexadecimal digest for a text string.
+- `get_file_digest`: Returns the SHA-256 hexadecimal digest for a file using streaming reads.
 
 ## Installation
 
@@ -44,9 +49,9 @@ pip install smith-utils
 ## Quick Start
 
 ```python
-from smith_utils import ensure_date, parse_numeric_value, normalize_text
+from smith_utils import ensure_date, get_text_digest, parse_numeric_value, normalize_text
 from smith_utils import make_unicode_char_name_records
-from smith_utils import normalize_file_to_lf
+from smith_utils import get_file_digest, normalize_file_to_lf
 
 # Datetime
 date = ensure_date("20231225") # datetime.date(2023, 12, 25)
@@ -64,6 +69,10 @@ records = make_unicode_char_name_records("Aあ")
 # Normalize a file's newlines to LF
 summary = normalize_file_to_lf("input.txt", "output.txt")
 # {'newline_type': 'CRLF', 'bytes_in': ..., 'bytes_out': ...}
+
+# SHA-256 digests
+text_digest = get_text_digest("smith-utils")
+file_digest = get_file_digest("input.txt")
 ```
 
 ## Directory Structure

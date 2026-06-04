@@ -2,6 +2,18 @@
 
 <!-- version list -->
 
+## v0.3.1 (2026-06-04)
+
+### Features
+
+- Add SHA-256 hash utilities for text strings and files.
+- Expose hash helpers from `smith_utils.crypto` and the top-level `smith_utils` namespace.
+
+### Build System
+
+- Switch the package build backend from Setuptools to Hatchling.
+
+
 ## v0.3.0 (2026-05-29)
 
 ### Features

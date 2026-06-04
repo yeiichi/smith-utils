@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=68.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
 
 [project]
 name = "smith-utils"
@@ -51,8 +51,17 @@ Repository = "https://github.com/yeiichi/smith-utils"
 Documentation = "https://smith-utils.readthedocs.io/"
 Changelog = "https://smith-utils.readthedocs.io/en/latest/changelog.html"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.hatch.build.targets.wheel]
+packages = ["src/smith_utils"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/smith_utils",
+  "tests",
+  "README.md",
+  "LICENSE",
+  "pyproject.toml",
+]
 
 [tool.semantic_release]
 allow_zero_version = true

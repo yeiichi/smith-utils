@@ -85,3 +85,21 @@ Text Normalization & Metrics
 
    # Normalize newlines to LF and report original newline style.
    summary = normalize_file_to_lf("input.txt", "output.txt")
+
+Crypto Hash Utilities
+=====================
+
+.. currentmodule:: smith_utils
+
+.. autofunction:: get_text_digest
+   :no-index:
+.. autofunction:: get_file_digest
+   :no-index:
+
+.. code-block:: python
+
+   from smith_utils import get_file_digest, get_text_digest
+
+   # Calculate SHA-256 digests for strings and files.
+   text_digest = get_text_digest("smith-utils")
+   file_digest = get_file_digest("input.txt")
