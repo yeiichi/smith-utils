@@ -1,5 +1,6 @@
 from .crypto import get_file_digest, get_text_digest
 from .datetime import ensure_date, format_ordinal, parse_strict_date
+from .file import FileClassification, classify_file
 from .numeric import parse_currency_value, parse_numeric_value
 from .text import (
     NewlineType,
@@ -21,6 +22,8 @@ __all__ = [
     "StringDistance",
     "UnicodeCharNameRecord",
     "analyze_pair",
+    "FileClassification",
+    "classify_file",
     "ensure_date",
     "format_ordinal",
     "get_file_digest",

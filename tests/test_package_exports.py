@@ -15,6 +15,8 @@ def test_exports_are_available_globally():
         "normalize_text",
         "UnicodeCharNameRecord",
         "make_unicode_char_name_records",
+        "FileClassification",
+        "classify_file",
     }
 
     for name in expected:

@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Unreleased
+----------
+
+- Added File Classification Utilities (``FileClassification``, ``classify_file``).
+- Exposed file classification helpers from ``smith_utils.file`` and top-level ``smith_utils``.
+- Documented file classification in the quickstart and API reference.
+
 v0.3.1
 ------
 

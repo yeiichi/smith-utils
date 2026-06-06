@@ -10,3 +10,4 @@ This section contains the API documentation for ``smith-utils``.
    numeric
    text
    crypto
+   file

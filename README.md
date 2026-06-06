@@ -38,6 +38,11 @@ Calculate SHA-256 digests for text and files.
 - `get_text_digest`: Returns the SHA-256 hexadecimal digest for a text string.
 - `get_file_digest`: Returns the SHA-256 hexadecimal digest for a file using streaming reads.
 
+### File Classification Utilities (`smith_utils.file`)
+Classify files from multiple evidence sources.
+- `classify_file`: Returns extension, MIME, magic-number, and `file(1)` classification evidence.
+- `FileClassification`: Dataclass result containing raw signals, `file_class`, and derived categories.
+
 ## Installation
 
 Install via pip:
@@ -51,7 +56,7 @@ pip install smith-utils
 ```python
 from smith_utils import ensure_date, get_text_digest, parse_numeric_value, normalize_text
 from smith_utils import make_unicode_char_name_records
-from smith_utils import get_file_digest, normalize_file_to_lf
+from smith_utils import classify_file, get_file_digest, normalize_file_to_lf
 
 # Datetime
 date = ensure_date("20231225") # datetime.date(2023, 12, 25)
@@ -73,6 +78,10 @@ summary = normalize_file_to_lf("input.txt", "output.txt")
 # SHA-256 digests
 text_digest = get_text_digest("smith-utils")
 file_digest = get_file_digest("input.txt")
+
+# File classification
+classification = classify_file("input.pdf")
+# FileClassification(extension='.pdf', file_class='document', categories=('document', 'pdf'), ...)
 ```
 
 ## Directory Structure

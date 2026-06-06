@@ -103,3 +103,24 @@ Crypto Hash Utilities
    # Calculate SHA-256 digests for strings and files.
    text_digest = get_text_digest("smith-utils")
    file_digest = get_file_digest("input.txt")
+
+File Classification Utilities
+=============================
+
+.. currentmodule:: smith_utils
+
+.. autoclass:: FileClassification
+   :no-index:
+   :members:
+
+.. autofunction:: classify_file
+   :no-index:
+
+.. code-block:: python
+
+   from smith_utils import classify_file
+
+   # Classify a file from extension, MIME, magic bytes, and file(1) evidence.
+   classification = classify_file("input.pdf")
+   file_class = classification.file_class  # "document"
+   categories = classification.categories  # ("document", "pdf")

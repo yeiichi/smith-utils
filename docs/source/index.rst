@@ -13,6 +13,7 @@ Key Features
 - **Numeric Refinement**: Clean and parse messy numeric data.
 - **Text Normalization & Metrics**: Standardize text and compare string similarity.
 - **Crypto Hash Utilities**: Calculate SHA-256 digests for text and files.
+- **File Classification Utilities**: Classify files from extension, MIME, magic-number, and ``file(1)`` signals.
 
 Getting started
 ---------------

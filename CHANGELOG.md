@@ -2,6 +2,18 @@
 
 <!-- version list -->
 
+## Unreleased
+
+### Features
+
+- Add file classification utilities via `smith_utils.file.classify_file`.
+- Expose `FileClassification` and `classify_file` from the top-level `smith_utils` namespace.
+
+### Documentation
+
+- Document file classification in the README, quickstart, and API reference.
+
+
 ## v0.3.1 (2026-06-04)
 
 ### Features
