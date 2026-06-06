@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v0.4.0 (2026-06-06)
+
+### Build System
+
+- Switch to Hatchling
+  ([`e1521e2`](https://github.com/yeiichi/smith-utils/commit/e1521e2dae3f0e37d74bb05deb04fb3631cf1f23))
+
+### Features
+
+- Add file classification utilities
+  ([`9fa0248`](https://github.com/yeiichi/smith-utils/commit/9fa0248a4aa28848cea8563069e7a28504ee9a20))
+
+
 ## Unreleased
 
 ### Features
