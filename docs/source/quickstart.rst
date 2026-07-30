@@ -2,6 +2,7 @@ Quickstart
 ==========
 
 This page gives a short introduction to the most common use cases.
+For command line usage, see :doc:`cli`.
 
 Datetime Utilities
 ==================
@@ -46,6 +47,8 @@ Text Normalization & Metrics
 
 .. autofunction:: normalize_text
    :no-index:
+.. autofunction:: random_string
+   :no-index:
 .. autofunction:: make_unicode_char_name_records
    :no-index:
 .. autofunction:: normalize_file_to_lf
@@ -71,6 +74,13 @@ Text Normalization & Metrics
 
    # Normalize text.
    clean_text = normalize_text("  Ｓｍｉｔｈ  Ｕｔｉｌｓ  ")  # "smith utils"
+
+.. code-block:: python
+
+   from smith_utils import random_string
+
+   # Generate a secure random ASCII string.
+   token = random_string(16)
 
 .. code-block:: python
 

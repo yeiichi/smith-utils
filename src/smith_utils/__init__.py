@@ -3,6 +3,7 @@ from .datetime import ensure_date, format_ordinal, parse_strict_date
 from .file import FileClassification, classify_file
 from .numeric import parse_currency_value, parse_numeric_value
 from .text import (
+    CharCategory,
     NewlineType,
     Relation,
     Result,
@@ -13,9 +14,12 @@ from .text import (
     normalize_file_to_lf,
     normalize_newlines_stream,
     normalize_text,
+    random_mixed_char,
+    random_string,
 )
 
 __all__ = [
+    "CharCategory",
     "NewlineType",
     "Relation",
     "Result",
@@ -35,4 +39,6 @@ __all__ = [
     "parse_currency_value",
     "parse_numeric_value",
     "parse_strict_date",
+    "random_mixed_char",
+    "random_string",
 ]

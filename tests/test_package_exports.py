@@ -5,9 +5,12 @@ def test_exports_are_available_globally():
     expected = {
         "get_file_digest",
         "get_text_digest",
+        "CharCategory",
         "NewlineType",
         "normalize_file_to_lf",
         "normalize_newlines_stream",
+        "random_mixed_char",
+        "random_string",
         "StringDistance",
         "analyze_pair",
         "Result",

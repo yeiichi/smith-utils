@@ -14,6 +14,7 @@ Key Features
 - **Text Normalization & Metrics**: Standardize text and compare string similarity.
 - **Crypto Hash Utilities**: Calculate SHA-256 digests for text and files.
 - **File Classification Utilities**: Classify files from extension, MIME, magic-number, and ``file(1)`` signals.
+- **Command Line Tools**: Run common utilities from the ``smith`` command.
 
 Getting started
 ---------------
@@ -24,6 +25,7 @@ Getting started
 
    installation
    quickstart
+   cli
    api/index
    development
    changelog

@@ -8,6 +8,8 @@ Install from PyPI
 
    pip install smith-utils
 
+The package installs the ``smith`` command for CLI access to selected utilities.
+
 Install from source
 -------------------
 
@@ -16,6 +18,12 @@ Install from source
    git clone https://github.com/yeiichi/smith-utils
    cd smith-utils
    pip install .
+
+Verify the CLI installation:
+
+.. code-block:: bash
+
+   smith --help
 
 Requirements
 ------------

@@ -26,6 +26,7 @@ Clean and parse messy numeric data.
 ### Text Normalization & Metrics (`smith_utils.text`)
 Standardize text and compare string similarity.
 - `normalize_text`: Unicode NFKC normalization, case folding, and whitespace handling.
+- `random_string`: Generate random ASCII, kanji, or mixed strings using secure randomness.
 - `StringDistance`: Implementation of Damerau-Levenshtein and Jaro-Winkler algorithms for fuzzy matching.
 - `analyze_pair`: Convenience function for string comparison returning a `Result`.
 - `Relation` / `Result`: Relation enum and typed result for text comparisons.
@@ -51,10 +52,12 @@ Install via pip:
 pip install smith-utils
 ```
 
+This also installs the `smith` command.
+
 ## Quick Start
 
 ```python
-from smith_utils import ensure_date, get_text_digest, parse_numeric_value, normalize_text
+from smith_utils import ensure_date, get_text_digest, parse_numeric_value, normalize_text, random_string
 from smith_utils import make_unicode_char_name_records
 from smith_utils import classify_file, get_file_digest, normalize_file_to_lf
 
@@ -66,6 +69,9 @@ value = parse_numeric_value("(1,250.50)") # -1250.5
 
 # Text
 clean_text = normalize_text("  Ｓｍｉｔｈ  Ｕｔｉｌｓ  ") # "smith utils"
+
+# Random strings
+token = random_string(16)
 
 # Unicode metadata
 records = make_unicode_char_name_records("Aあ")
@@ -82,6 +88,17 @@ file_digest = get_file_digest("input.txt")
 # File classification
 classification = classify_file("input.pdf")
 # FileClassification(extension='.pdf', file_class='document', categories=('document', 'pdf'), ...)
+```
+
+## CLI
+
+```bash
+smith random-string 16
+smith digest --text "smith-utils"
+smith digest input.txt
+smith normalize-text "  Ｓｍｉｔｈ  Ｕｔｉｌｓ  "
+smith unicode-names "Aあ"
+smith classify-file input.pdf
 ```
 
 ## Directory Structure
