@@ -4,6 +4,18 @@ Changelog
 Unreleased
 ----------
 
+- No unreleased changes.
+
+v0.5.0
+------
+
+- Added Positive Gaussian Sampling (``sample_positive_gaussian``).
+- Added the ``smith positive-gaussian-samples`` CLI command.
+- Documented positive Gaussian sampling in the README, quickstart, CLI docs, and numeric API reference.
+
+v0.4.0
+------
+
 - Added File Classification Utilities (``FileClassification``, ``classify_file``).
 - Exposed file classification helpers from ``smith_utils.file`` and top-level ``smith_utils``.
 - Documented file classification in the quickstart and API reference.

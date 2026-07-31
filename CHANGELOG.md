@@ -2,6 +2,18 @@
 
 <!-- version list -->
 
+## v0.5.0 (2026-07-31)
+
+### Features
+
+- Add positive Gaussian sampling via `sample_positive_gaussian`.
+- Add `smith positive-gaussian-samples` CLI command.
+
+### Documentation
+
+- Document positive Gaussian sampling in the README, quickstart, CLI docs, and numeric API reference.
+
+
 ## v0.4.0 (2026-06-06)
 
 ### Build System
@@ -13,19 +25,6 @@
 
 - Add file classification utilities
   ([`9fa0248`](https://github.com/yeiichi/smith-utils/commit/9fa0248a4aa28848cea8563069e7a28504ee9a20))
-
-
-## Unreleased
-
-### Features
-
-- Add file classification utilities via `smith_utils.file.classify_file`.
-- Expose `FileClassification` and `classify_file` from the top-level `smith_utils` namespace.
-
-### Documentation
-
-- Document file classification in the README, quickstart, and API reference.
-
 
 ## v0.3.1 (2026-06-04)
 
