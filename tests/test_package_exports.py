@@ -20,6 +20,7 @@ def test_exports_are_available_globally():
         "make_unicode_char_name_records",
         "FileClassification",
         "classify_file",
+        "sample_positive_gaussian",
     }
 
     for name in expected:

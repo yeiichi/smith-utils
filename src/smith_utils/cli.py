@@ -12,6 +12,7 @@ from . import (
     make_unicode_char_name_records,
     normalize_text,
     random_string,
+    sample_positive_gaussian,
 )
 
 
@@ -67,6 +68,20 @@ def _make_parser() -> argparse.ArgumentParser:
     classify_parser.add_argument("path", help="file path to classify")
     classify_parser.set_defaults(func=_classify_file_command)
 
+    gaussian_parser = subparsers.add_parser(
+        "positive-gaussian-samples",
+        help="sample positive Gaussian values",
+    )
+    gaussian_parser.add_argument("trial_number", type=int, help="number of samples to generate")
+    gaussian_parser.add_argument("--mean", type=float, required=True, help="Gaussian mean")
+    gaussian_parser.add_argument(
+        "--approx-upper-bound",
+        type=float,
+        required=True,
+        help="approximate upper bound used as mean + 3 sigma and as a truncation bound",
+    )
+    gaussian_parser.set_defaults(func=_positive_gaussian_samples_command)
+
     return parser
 
 
@@ -120,6 +135,15 @@ def _classify_file_command(args: argparse.Namespace) -> None:
     )
     for key, value in fields:
         print(f"{key}={'' if value is None else value}")
+
+
+def _positive_gaussian_samples_command(args: argparse.Namespace) -> None:
+    for sample in sample_positive_gaussian(
+        mean=args.mean,
+        approx_upper_bound=args.approx_upper_bound,
+        trial_number=args.trial_number,
+    ):
+        print(sample)
 
 
 if __name__ == "__main__":

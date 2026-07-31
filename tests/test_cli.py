@@ -77,3 +77,14 @@ def test_classify_file_command_prints_key_value_fields(tmp_path, capsys):
     assert "extension=.pdf" in output
     assert "file_class=document" in output
     assert "magic_type=PDF document" in output
+
+
+def test_positive_gaussian_samples_command_prints_one_sample_per_line(monkeypatch, capsys):
+    monkeypatch.setattr(
+        "src.smith_utils.cli.sample_positive_gaussian",
+        lambda mean, approx_upper_bound, trial_number: [1.25, 2.5],
+    )
+
+    assert main(["positive-gaussian-samples", "2", "--mean", "1", "--approx-upper-bound", "3"]) == 0
+
+    assert capsys.readouterr().out.splitlines() == ["1.25", "2.5"]

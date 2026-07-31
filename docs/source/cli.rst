@@ -69,3 +69,13 @@ Classify a file from extension, MIME, magic bytes, and ``file(1)`` evidence:
 .. code-block:: bash
 
    smith classify-file input.pdf
+
+Positive Gaussian samples
+-------------------------
+
+Generate Gaussian samples truncated to positive values up to the approximate upper bound.
+The bound is treated as ``mean + 3 * sigma`` and as a truncation bound:
+
+.. code-block:: bash
+
+   smith positive-gaussian-samples 3 --mean 5 --approx-upper-bound 10

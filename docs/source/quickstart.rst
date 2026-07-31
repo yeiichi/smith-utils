@@ -32,6 +32,8 @@ Numeric Refinement
    :no-index:
 .. autofunction:: parse_currency_value
    :no-index:
+.. autofunction:: sample_positive_gaussian
+   :no-index:
 
 .. code-block:: python
 
@@ -39,6 +41,14 @@ Numeric Refinement
 
    # Parse messy numeric data.
    value = parse_numeric_value("(1,250.50)")  # -1250.5
+
+.. code-block:: python
+
+   from smith_utils import sample_positive_gaussian
+
+   # Generate Gaussian samples truncated to 0 < sample <= approx_upper_bound.
+   # approx_upper_bound is treated as mean + 3 * sigma.
+   samples = sample_positive_gaussian(mean=5.0, approx_upper_bound=10.0, trial_number=3)
 
 Text Normalization & Metrics
 ============================

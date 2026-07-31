@@ -22,6 +22,7 @@ Robust date parsing and formatting.
 Clean and parse messy numeric data.
 - `parse_numeric_value`: Handles custom separators, decimals, and negative formats like `(1,234.56)`.
 - `parse_currency_value`: Alias for numeric parsing, specifically for currency strings.
+- `sample_positive_gaussian`: Generate Gaussian samples truncated to positive values up to an approximate upper bound.
 
 ### Text Normalization & Metrics (`smith_utils.text`)
 Standardize text and compare string similarity.
@@ -59,13 +60,15 @@ This also installs the `smith` command.
 ```python
 from smith_utils import ensure_date, get_text_digest, parse_numeric_value, normalize_text, random_string
 from smith_utils import make_unicode_char_name_records
-from smith_utils import classify_file, get_file_digest, normalize_file_to_lf
+from smith_utils import classify_file, get_file_digest, normalize_file_to_lf, sample_positive_gaussian
 
 # Datetime
 date = ensure_date("20231225") # datetime.date(2023, 12, 25)
 
 # Numeric
 value = parse_numeric_value("(1,250.50)") # -1250.5
+samples = sample_positive_gaussian(mean=5.0, approx_upper_bound=10.0, trial_number=3)
+# approx_upper_bound is treated as mean + 3 * sigma and as a truncation bound.
 
 # Text
 clean_text = normalize_text("  Ｓｍｉｔｈ  Ｕｔｉｌｓ  ") # "smith utils"
@@ -99,6 +102,7 @@ smith digest input.txt
 smith normalize-text "  Ｓｍｉｔｈ  Ｕｔｉｌｓ  "
 smith unicode-names "Aあ"
 smith classify-file input.pdf
+smith positive-gaussian-samples 3 --mean 5 --approx-upper-bound 10
 ```
 
 ## Directory Structure
