@@ -2,6 +2,8 @@ Command Line Tools
 ==================
 
 The ``smith`` command provides small wrappers around selected ``smith-utils`` APIs.
+Use ``smith com-name-cleaner`` or the standalone ``com-name-cleaner`` for
+Japanese organization names.
 
 Random strings
 --------------
@@ -79,3 +81,50 @@ The bound is treated as ``mean + 3 * sigma`` and as a truncation bound:
 .. code-block:: bash
 
    smith positive-gaussian-samples 3 --mean 5 --approx-upper-bound 10
+
+.. _com-name-cleaner-cli:
+
+Japanese organization names
+---------------------------
+
+Both ``smith com-name-cleaner`` and ``com-name-cleaner`` accept the same arguments.
+Pass one or more quoted names as arguments or send one UTF-8 name per line
+on standard input. By default, the command prints one normalized name per line.
+
+.. code-block:: bash
+
+   smith com-name-cleaner '㈱ 例示用工房' '例示用商事（株）'
+   printf '%s\n' '㈱ 例示用工房' '例示用商事（株）' | com-name-cleaner
+
+Use ``--parts`` for JSON Lines arrays in prefix, stem, suffix order.
+Missing legal forms appear as ``null``. Use ``--json`` for JSON Lines
+objects with the original and normalized text, the extracted fields, and
+the parsing status.
+
+.. code-block:: bash
+
+   com-name-cleaner --parts '例示用商事（株）'
+   com-name-cleaner --json '(医) 社団例示用診療所'
+
+The second example returns an ``ambiguous`` status because expanding
+``(医)`` would make ``社団`` appear to be part of the legal form.
+Use ``--remove-all-spaces`` in either text or CSV mode to remove all Unicode
+whitespace before parsing.
+
+Clean a CSV
+~~~~~~~~~~~
+
+Supply the input file and the exact header of the organization-name column.
+
+.. code-block:: bash
+
+   com-name-cleaner --csv organizations.csv --column 会社名
+   com-name-cleaner --csv legacy.csv --column 会社名 --encoding cp932 --output cleaned.csv
+
+The first command writes ``organizations_cleaned.csv`` beside the input.
+By default, the reader accepts UTF-8 with or without a byte order mark (BOM).
+The output uses UTF-8 with a BOM. It preserves the original columns and
+appends ``normalized_name``, ``prefix``, ``stem``, ``suffix``, and
+``parse_status``. Missing legal forms appear as empty cells.
+
+See :doc:`api/com_name_cleaner` for the Python API and parsing statuses.

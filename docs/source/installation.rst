@@ -8,7 +8,8 @@ Install from PyPI
 
    pip install smith-utils
 
-The package installs the ``smith`` command for CLI access to selected utilities.
+The package installs ``smith`` for general utilities and ``com-name-cleaner``
+for Japanese organization names.
 
 Install from source
 -------------------
@@ -24,6 +25,7 @@ Verify the CLI installation:
 .. code-block:: bash
 
    smith --help
+   com-name-cleaner --help
 
 Requirements
 ------------

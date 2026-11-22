@@ -11,3 +11,4 @@ This section contains the API documentation for ``smith-utils``.
    text
    crypto
    file
+   com_name_cleaner

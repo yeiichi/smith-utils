@@ -14,6 +14,7 @@ from . import (
     random_string,
     sample_positive_gaussian,
 )
+from .com_name_cleaner.cli import configure_parser as configure_com_name_cleaner_parser
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -59,6 +60,12 @@ def _make_parser() -> argparse.ArgumentParser:
     )
     normalize_parser.add_argument("--no-nfkc", action="store_true", help="skip NFKC normalization")
     normalize_parser.set_defaults(func=_normalize_text_command)
+
+    com_name_parser = subparsers.add_parser(
+        "com-name-cleaner",
+        help="normalize Japanese organization names",
+    )
+    configure_com_name_cleaner_parser(com_name_parser)
 
     unicode_parser = subparsers.add_parser("unicode-names", help="show Unicode character names")
     unicode_parser.add_argument("text", help="text to inspect")

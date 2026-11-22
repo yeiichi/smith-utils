@@ -34,6 +34,7 @@ classifiers = [
 dependencies = []
 
 [project.scripts]
+com-name-cleaner = "smith_utils.com_name_cleaner.cli:main"
 smith = "smith_utils.cli:main"
 
 [project.optional-dependencies]

@@ -53,7 +53,7 @@ Install via pip:
 pip install smith-utils
 ```
 
-This also installs the `smith` command.
+This also installs the `smith` and `com-name-cleaner` commands.
 
 ## Quick Start
 
@@ -103,6 +103,8 @@ smith normalize-text "  Ｓｍｉｔｈ  Ｕｔｉｌｓ  "
 smith unicode-names "Aあ"
 smith classify-file input.pdf
 smith positive-gaussian-samples 3 --mean 5 --approx-upper-bound 10
+smith com-name-cleaner '㈱ 例示用工房'
+com-name-cleaner --csv organizations.csv --column 会社名
 ```
 
 ## Directory Structure

@@ -57,6 +57,12 @@ def test_normalize_text_command_can_keep_case(capsys):
     assert capsys.readouterr().out.strip() == "Hello World"
 
 
+def test_com_name_cleaner_command_prints_parts(capsys):
+    assert main(["com-name-cleaner", "--parts", "例示用商事（株）"]) == 0
+
+    assert capsys.readouterr().out.strip() == '[null, "例示用商事", "株式会社"]'
+
+
 def test_unicode_names_command_prints_tab_separated_records(capsys):
     assert main(["unicode-names", "Aあ"]) == 0
 
