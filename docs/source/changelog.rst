@@ -6,6 +6,13 @@ Unreleased
 
 - No unreleased changes.
 
+v0.6.0
+------
+
+- Normalize Japanese organization names and extract legal forms from text and CSV.
+- Add the ``smith com-name-cleaner`` subcommand and the standalone ``com-name-cleaner`` command.
+- Document the cleaner's Python API, parsing statuses, and CLI usage.
+
 v0.5.0
 ------
 
