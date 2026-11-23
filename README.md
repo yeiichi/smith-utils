@@ -27,6 +27,7 @@ Clean and parse messy numeric data.
 ### Text Normalization & Metrics (`smith_utils.text`)
 Standardize text and compare string similarity.
 - `normalize_text`: Unicode NFKC normalization, case folding, and whitespace handling.
+- `normalize_kanji_variants`: Replace Japanese glyph variants using the bundled MJSU 1.2.0 table.
 - `random_string`: Generate random ASCII, kanji, or mixed strings using secure randomness.
 - `StringDistance`: Implementation of Damerau-Levenshtein and Jaro-Winkler algorithms for fuzzy matching.
 - `analyze_pair`: Convenience function for string comparison returning a `Result`.
@@ -113,4 +114,7 @@ com-name-cleaner --csv organizations.csv --column 会社名
 - `tests/`: Comprehensive test suite.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+The Python code is licensed under the [MIT License](LICENSE). The bundled
+MJSU replacement data is distributed under CC BY-SA 2.1 Japan. See the
+[data attribution and provenance](src/smith_utils/text/_data/mjsu-1.2.0-LICENSE.md).

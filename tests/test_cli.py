@@ -1,5 +1,8 @@
 import hashlib
 import string
+from io import StringIO
+
+import pytest
 
 from src.smith_utils.cli import main
 
@@ -55,6 +58,24 @@ def test_normalize_text_command_can_keep_case(capsys):
     assert main(["normalize-text", "--keep-case", "  Hello   World  "]) == 0
 
     assert capsys.readouterr().out.strip() == "Hello World"
+
+
+def test_normalize_kanji_variants_command_normalizes_argument(capsys):
+    assert main(["normalize-kanji-variants", " 髙橋 國 神\uFE00 "]) == 0
+
+    assert capsys.readouterr().out == " 高橋 國 神 \n"
+
+
+@pytest.mark.parametrize("ending", ["", "\n"])
+def test_normalize_kanji_variants_command_preserves_stdin_line_endings(
+    ending, monkeypatch, capsys
+):
+    source = f"髙橋\n\t髙\U000E01EF{ending}"
+    monkeypatch.setattr("src.smith_utils.cli.sys.stdin", StringIO(source))
+
+    assert main(["normalize-kanji-variants"]) == 0
+
+    assert capsys.readouterr().out == f"高橋\n\t髙\U000E01EF{ending}"
 
 
 def test_com_name_cleaner_command_prints_parts(capsys):

@@ -10,6 +10,7 @@ from . import (
     get_file_digest,
     get_text_digest,
     make_unicode_char_name_records,
+    normalize_kanji_variants,
     normalize_text,
     random_string,
     sample_positive_gaussian,
@@ -60,6 +61,13 @@ def _make_parser() -> argparse.ArgumentParser:
     )
     normalize_parser.add_argument("--no-nfkc", action="store_true", help="skip NFKC normalization")
     normalize_parser.set_defaults(func=_normalize_text_command)
+
+    kanji_parser = subparsers.add_parser(
+        "normalize-kanji-variants",
+        help="normalize Japanese kanji variants using MJSU 1.2.0",
+    )
+    kanji_parser.add_argument("text", nargs="?", help="text to normalize; reads stdin when omitted")
+    kanji_parser.set_defaults(func=_normalize_kanji_variants_command)
 
     com_name_parser = subparsers.add_parser(
         "com-name-cleaner",
@@ -120,6 +128,13 @@ def _normalize_text_command(args: argparse.Namespace) -> None:
             nfkc=not args.no_nfkc,
         )
     )
+
+
+def _normalize_kanji_variants_command(args: argparse.Namespace) -> None:
+    if args.text is None:
+        sys.stdout.write(normalize_kanji_variants(sys.stdin.read()))
+    else:
+        print(normalize_kanji_variants(args.text))
 
 
 def _unicode_names_command(args: argparse.Namespace) -> None:

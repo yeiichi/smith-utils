@@ -54,6 +54,29 @@ Useful options:
    smith normalize-text --remove-all-whitespace "  Hello   World  "
    smith normalize-text --no-nfkc "① ＡＢＣ"
 
+.. _normalize-kanji-variants-cli:
+
+Kanji variant normalization
+---------------------------
+
+Use :func:`smith_utils.text.normalize_kanji_variants` from the command line
+to apply the bundled MJSU 1.2.0 mappings. Text without an approved mapping
+is preserved, including unknown variation sequences.
+
+Pass a single quoted argument to print the result followed by a newline.
+
+.. code-block:: bash
+
+   smith normalize-kanji-variants '髙橋 國'
+   # 高橋 國
+
+Omit the argument to read standard input and write the normalized text
+without adding a newline.
+
+.. code-block:: bash
+
+   smith normalize-kanji-variants < input.txt > output.txt
+
 Unicode names
 -------------
 

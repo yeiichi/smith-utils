@@ -1,3 +1,4 @@
+from .kanji_variants import normalize_kanji_variants
 from .metrics import StringDistance, analyze_pair, Result, Relation
 from .newlines import NewlineType, normalize_file_to_lf, normalize_newlines_stream
 from .normalization import normalize_text
@@ -15,6 +16,7 @@ __all__ = [
     "analyze_pair",
     "Result",
     "Relation",
+    "normalize_kanji_variants",
     "normalize_text",
     "UnicodeCharNameRecord",
     "make_unicode_char_name_records",

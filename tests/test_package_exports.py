@@ -15,6 +15,7 @@ def test_exports_are_available_globally():
         "analyze_pair",
         "Result",
         "Relation",
+        "normalize_kanji_variants",
         "normalize_text",
         "UnicodeCharNameRecord",
         "make_unicode_char_name_records",
