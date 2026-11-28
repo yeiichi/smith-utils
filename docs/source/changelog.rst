@@ -6,6 +6,13 @@ Unreleased
 
 - No unreleased changes.
 
+v2.0.0
+------
+
+- **Breaking change**. ``split_name()`` now converts ASCII letters, digits,
+  punctuation, and spaces in the stem to full width by default. Pass
+  ``full_width=False`` for the previous output.
+
 v1.0.0
 ------
 
