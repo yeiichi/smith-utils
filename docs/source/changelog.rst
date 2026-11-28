@@ -6,6 +6,19 @@ Unreleased
 
 - No unreleased changes.
 
+v1.0.0
+------
+
+- **Breaking change**. ``normalize_name()`` now returns full-width ASCII
+  equivalents by default while preserving letter case. Pass
+  ``full_width=False`` for the previous output.
+- Add ``normalize_kanji_variants()`` for Japanese glyph normalization using
+  the MJSU 1.2.0 table.
+- Expand ``com_name_cleaner`` to recognize 78 legal forms and report shared
+  abbreviations such as ``(特)`` as ambiguous.
+- Add a :ref:`Japanese organization-name Quick Start <organization-name-quickstart>`
+  for Python, CLI, and CSV workflows using fictional organization names.
+
 v0.6.0
 ------
 
