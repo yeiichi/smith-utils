@@ -233,11 +233,18 @@ def normalize_name(
     return text.translate(_ASCII_TO_FULL_WIDTH) if full_width else text
 
 
-def split_name(value: str, *, remove_all_spaces: bool = False) -> tuple[str | None, str, str | None]:
-    """Return ``(prefix, stem, suffix)`` from :func:`parse_name`.
+def split_name(
+    value: str, *, remove_all_spaces: bool = False, full_width: bool = True
+) -> tuple[str | None, str, str | None]:
+    """Return ``(prefix, stem, suffix)`` with a full-width stem by default.
 
     Absent forms are ``None``. When no form is extracted, the stem is the
-    normalized text. Pass ``remove_all_spaces=True`` to remove all whitespace
-    before splitting.
+    normalized text. As in :func:`normalize_name`, ASCII letters, digits,
+    punctuation, and spaces are widened after parsing. Pass ``full_width=False``
+    for the parts from :func:`parse_name`. Pass ``remove_all_spaces=True`` to
+    remove all whitespace before splitting.
     """
-    return parse_name(value, remove_all_spaces=remove_all_spaces).parts
+    prefix, stem, suffix = parse_name(value, remove_all_spaces=remove_all_spaces).parts
+    if full_width:
+        stem = stem.translate(_ASCII_TO_FULL_WIDTH)
+    return prefix, stem, suffix

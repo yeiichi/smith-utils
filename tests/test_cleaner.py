@@ -138,8 +138,20 @@ def test_expansion_that_changes_parts_is_ambiguous(raw, normalized):
     ("例示用車両　(株)", (None, "例示用車両", "株式会社")),
     ("（一社）例示用協会", ("一般社団法人", "例示用協会", None)),
     ("テスト", (None, "テスト", None)),
-    ("(株)テスト(有)", (None, "(株)テスト(有)", None)),
+    ("(株)テスト(有)", (None, "（株）テスト（有）", None)),
     ("　", (None, "", None)),
 ])
 def test_split_name(raw, expected):
     assert split_name(raw) == expected
+
+
+@pytest.mark.parametrize(("full_width", "expected", "without_spaces"), [
+    (True, "Ｄｅｍｏ　１２３！　カタカナ", "Ｄｅｍｏ１２３！カタカナ"),
+    (False, "Demo 123! カタカナ", "Demo123!カタカナ"),
+])
+def test_split_name_width(full_width, expected, without_spaces):
+    raw = "（株）Ｄeｍo　１２３！ ｶﾀｶﾅ"
+    assert split_name(raw, full_width=full_width) == ("株式会社", expected, None)
+    assert split_name(raw, full_width=full_width, remove_all_spaces=True) == (
+        "株式会社", without_spaces, None,
+    )

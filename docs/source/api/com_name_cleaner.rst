@@ -6,9 +6,10 @@ Use :func:`~smith_utils.com_name_cleaner.normalize_name` for display text,
 :func:`~smith_utils.com_name_cleaner.parse_name` when you also need the
 parsing status.
 
-By default, ``normalize_name`` converts printable ASCII characters, including
-letters, digits, punctuation, and spaces, to full width. Pass
-``full_width=False`` for half-width ASCII. Both modes preserve letter case.
+By default, ``normalize_name`` and ``split_name`` convert printable ASCII
+characters, including letters, digits, punctuation, and spaces, to full width
+in the display text and stem, respectively. Pass ``full_width=False`` for
+half-width ASCII. Both modes preserve letter case.
 
 .. code-block:: python
 
