@@ -14,7 +14,7 @@ Key Features
 - **Text Normalization & Metrics**: Standardize text and compare string similarity.
 - **Crypto Hash Utilities**: Calculate SHA-256 digests for text and files.
 - **File Classification Utilities**: Classify files from extension, MIME, magic-number, and ``file(1)`` signals.
-- **Japanese Organization Names**: Normalize names and extract legal forms from text or CSV files.
+- :ref:`Normalize Japanese organization names <organization-name-quickstart>` and extract legal forms from text or CSV files.
 - **Command Line Tools**: Run utilities with ``smith`` or clean organization names with ``com-name-cleaner``.
 
 Getting started

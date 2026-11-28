@@ -1,6 +1,8 @@
 Development
 ===========
 
+Use fictional organization names in scripts, test fixtures, and documentation examples, including Sphinx examples.
+
 Running tests
 -------------
 
